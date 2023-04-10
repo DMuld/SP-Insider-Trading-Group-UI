@@ -1,23 +1,13 @@
-
+import { backendURL } from './backendURL.js';
 window.onload=init;
 
-// document.addEventListener('load', init);
+// This is an example API request. 
 async function init(){
-    let helloWorldPrint = document.getElementById("helloworld");
-    await fetch('http://localhost:8080/hello?name=Devin', {mode: 'no-cors'}).then((response) => {
-        response.text();
-    }).then((text) => {
+    await fetch(backendURL+'hello?name=Developer').then( function (response) {
+        return response.text();
+    }).then( function (text){
         console.log(text);
+    }).catch((err) => {
+        console.log("Unable to get <blank> request.");
     });
 }
-
-// , {
-//     method: 'GET',
-//     headers: {
-//         "Access-Control-Allow-Origin": "*",
-//         "Content-Type": "text/plain"
-//     },
-//     mode: 'no-cors'
-//     // ,
-//     // body: response
-// }
