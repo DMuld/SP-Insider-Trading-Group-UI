@@ -32,4 +32,4 @@ document.write('\
         </div>\
     </footer>\
 \
-');
+');   
