@@ -16,7 +16,7 @@
   <title>Log In</title>
 </head>
 
-<body onload="init()">
+<body>
 
 
   <!-- Navigation Bar Stuff -->
@@ -32,7 +32,7 @@
           <img src="stonks.png" class="img-fluid" alt="Sample image">
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <form>
+          <div>
 
             <!-- Email input -->
             <div class="form-outline mb-3">
@@ -45,14 +45,15 @@
             </div>
 
             <div class="text-center text-lg-start mt-3 pt-2">
-              <button type="submit" class="btn btn-primary btn-lg"
-                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+              <button class="btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;"
+                id="loginSubmit">Login</button>
               <p></p>
               <p class="h5 text-muted">Don't have an account? <a class="text-primary" href="register.html"
                   class="link-primary">Register</a></p>
             </div>
 
-          </form>
+          </div>
         </div>
       </div>
     </div>
