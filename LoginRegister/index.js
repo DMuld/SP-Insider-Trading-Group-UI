@@ -1,5 +1,5 @@
-import { backendURL } from './backendURL.js';
-const { createHash } = require('crypto');
+import { backendURL } from '../backendURL.js';
+// const { createHash } = require('crypto');
 
 var user = "guest";
 
@@ -7,43 +7,34 @@ var user = "guest";
 // Is located in the 'text' variable.
 
 // Takes a string and returns the hashed version of the string.
-function hash(string){
-    return createHash('sha256').update(string).digest('hex');
+// function hash(string){
+//     return createHash('sha256').update(string).digest('hex');
+// }
+
+if (window.location.pathname.split("/").pop() == "login.html") {
+    document.getElementById("loginSubmit").addEventListener("click", addUser, false);
+} else {
+    document.getElementById("registerSubmit").addEventListener("click", registerUser, false);
 }
 
-function init(){
-    
-}
-
-async function readData(){
+async function addUser(){
     const name = document.getElementById("useremail").value;
-    const hashedPassword = hash(document.getElementByID("userpassword").value);
+    const hashedPassword = document.getElementById("userpassword").value;
     var authenticated;
 
     if (name && hashedPassword) {
         authenticated = authenticateUser(name, hashedPassword);
     }
+}
 
-    if (authenticated) {
-        console.log("User authenticated");
-    }
-    else {
-        console.log("User not authenticated");
-    }
-
+async function registerUser(){
+    
     const newName = document.getElementById("newuseremail").value;
-    const newhashedPassword = hash(document.getElementByID("userpassword1").value);
-    const newhashedPassword2 = hash(document.getElementByID("userpassword2").value);
+    const newHashedPassword = document.getElementById("newuserpassword1").value;
+    const newHashedPassword2 = document.getElementById("newuserpassword2").value;
 
     if (newHashedPassword == newHashedPassword2 && newHashedPassword && newName) {
-        created = createUser(newName, newHashedPassword);
-    }
-
-    if (created) {
-        console.log("User " + newName + " created.");
-    }
-    else {
-        console.log("No users created.");
+        createUser(newName, newHashedPassword);
     }
 }
 
@@ -65,9 +56,21 @@ async function authenticateUser(name, hashedPassword){
         return response.text();
     }).then( function (text){
         console.log(text);
+
+        if (text == "Authenticated")
+        {
+            console.log("User authenticated");
+            // User authentication is always true - FIX
+            window.location.href="../index.html";
+        } else {
+            alert("User not authenticated");
+        }
+        
     }).catch((err) => {
         console.log("Cannot find /authenticateUser on backend.");
     })
+
+    
 }
 
 // Takse usernames and hashed password. Returns if it was created or not.
@@ -76,6 +79,7 @@ async function createUser(name, hashedPassword){
         return response.text();
     }).then( function (text){
         console.log(text);
+        window.location.href="../index.html"
     }).catch((err) => {
         console.log("Cannot find /createUser on backend.");
     });

@@ -16,7 +16,7 @@
   <title>Register</title>
 </head>
 
-<body onload="init()">
+<body>
 
 
   <!-- Navigation Bar Stuff -->
@@ -32,7 +32,7 @@
           <img src="stonks.png" class="img-fluid" alt="Sample image">
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <form>
+          <div>
 
             <!-- Email input -->
             <div class="form-outline mb-3">
@@ -41,7 +41,7 @@
 
             <!-- Password input -->
             <div class="form-outline mb-3">
-              <input type="password" id="newuserpassword" class="form-control form-control-lg" placeholder="Password" />
+              <input type="password" id="newuserpassword1" class="form-control form-control-lg" placeholder="Password" />
             </div>
 
             <!-- Check Password input -->
@@ -51,14 +51,14 @@
             </div>
 
             <div class="text-center text-lg-start mt-3 pt-2">
-              <button type="submit" class="btn btn-primary btn-lg"
+              <button id="registerSubmit" class="btn btn-primary btn-lg"
                 style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
               <p></p>
               <p class="h5 text-muted">Already have an account? <a class="text-primary" href="login.html"
                   class="link-primary">Login</a></p>
             </div>
 
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -69,7 +69,7 @@
   <script src="/HeaderFooter/footer.js"></script>
 
   <!-- This installs jQuery, Popper.js, adn Bootstrap -->
-  <script src="index.js"></script>
+  <script type="module" src="index.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
