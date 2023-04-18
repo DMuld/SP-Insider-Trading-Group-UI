@@ -26,49 +26,37 @@
 
   <!-- The other stuff that we need to fill out -->
   <h1 class="display-1 text-light text-center">Insider Trading Group</h1>
-  <h2 id="helloworld" class="text-light text-center">Insider Trading Group</h1>
-    <span class="maininfo" >
-      <div class="card" style="width: 18rem;">
+  <h2 id="helloworld" class="text-light text-center">Newest Trades</h1>
+    <!-- These three are hard typed. 
+    The function in index.js will over rite them as needed, but this is just for spacing. -->
+    <div class="maininfo" >
+      <div id="card0" class="card" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">John Boozman</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Purchase: The AES Corp</h6>
-          <p class="card-text">Purchased 1k-15k worth of stocks on March 15.</p>
-          <a href="#" class="card-link">Purchase Stock</a>
-          <a href="#" class="card-link">Research Stock</a>
+          <h5 class="card-title">(Ticker) #(filedafter)</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Published: xx/xx/xx</h6>
+          <h6 class="card-subtitle mb-2 text-muted">Traded: xx/xx/xx</h6>
+          <p class="card-text">(purchase) (numofshared) at (price)</p>
+          <a href='https://robinhood.com/us/en/' target='_blank' class='btn btn-primary'>Purchase Stock</a>
+          <br/>
+          <a href='https://www.bloomberg.com/search?query=Nivida'  target='_blank' class='btn btn-secondary'>Research Stock</a>
         </div>
       </div>
+      <div id="card1" class="card" style="width: 18rem; display: none;"></div>
+      <div id="card2" class="card" style="width: 18rem; display: none;"></div>
+      <div id="card3" class="card" style="width: 18rem; display: none;"></div>
+      <div id="card4" class="card" style="width: 18rem; display: none;"></div>
+      <div id="card5" class="card" style="width: 18rem; display: none;"></div>
+      <div id="card6" class="card" style="width: 18rem; display: none;"></div>
+      <div id="card7" class="card" style="width: 18rem; display: none;"></div>
+      <div id="card8" class="card" style="width: 18rem; display: none;"></div>
+      <div id="card9" class="card" style="width: 18rem; display: none;"></div>
+      <div id="card10" class="card" style="width: 18rem; display: none;"></div>
+      <div id="card11" class="card" style="width: 18rem; display: none;"></div>
+      <div id="card12" class="card" style="width: 18rem; display: none;"></div>
+      <div id="card13" class="card" style="width: 18rem; display: none;"></div>
+      <div id="card14" class="card" style="width: 18rem; display: none;"></div>
       <br />
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Nancy Pelosi</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Purchase: Nivida</h6>
-          <p class="card-text">Purchased 20k-60k worth of stocks on March 17.</p>
-          <a href="#" class="card-link">Purchase Stock</a>
-          <a href="#" class="card-link">Research Stock</a>
-        </div>
-      </div>
-      <br />
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Kathy Manning</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Purchase: CME CORN</h6>
-          <p class="card-text">Purchased 1k-50k worth of stocks on March 14.</p>
-          <a href="#" class="card-link">Purchase Stock</a>
-          <a href="#" class="card-link">Research Stock</a>
-        </div>
-      </div>
-      <br />
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Seth Moulton</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Purchase: Activision Blizzard Inc</h6>
-          <p class="card-text">Purchased 50k-100k worth of stocks on March 14.</p>
-          <a href="#" class="card-link">Purchase Stock</a>
-          <a href="#" class="card-link">Research Stock</a>
-        </div>
-      </div>
-      <br />
-    </span>
+    </div>
 
     <br />
 
