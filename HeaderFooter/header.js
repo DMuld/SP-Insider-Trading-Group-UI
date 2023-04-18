@@ -11,9 +11,6 @@ document.write('\
             <li class="nav-item active">\
               <a class="nav-link" href="#">Top Picks<span class="sr-only">(current)</span></a>\
             </li>\
-            <li class="nav-item">\
-                <a class="nav-link" href="/LoginRegister/login.html">Log In</a>\
-            </li>\
             <li class="nav-item dropdown">\
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\
                 Dropdown\
@@ -30,6 +27,11 @@ document.write('\
             <input class="form-control mr-sm-2" type="search" placeholder="Search For Congress" aria-label="Search">\
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>\
           </form>\
+          <ul class = "navbar-nav">\
+            <li class="nav-item">\
+                <a class="nav-link" href="/LoginRegister/login.html">Log In</a>\
+            </li>\
+          </ul>\
         </div>\
       </nav>\
 \

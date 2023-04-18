@@ -1,12 +1,17 @@
 .maininfo {
     display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    width: 100%;
     text-align: center;
     justify-content: center;
+    overflow-y: auto;
 }
 
 .card {
     border-radius: 30px;
     margin: 30px;
+    min-width: 250px;
 }
 
 body {
@@ -37,8 +42,17 @@ border-color: #545454;
 }*/
 
 footer {
+    display: flex;
+    min-height: 25vh;
     background: #212529;
+    position: relative;
+    bottom: 0px;
 }
+
+/* navbar {
+    position: fixed;
+    top: 0px;
+} */
   
   
 body, html {

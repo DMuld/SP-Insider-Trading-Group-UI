@@ -27,6 +27,10 @@ document.write('\
                         <li>Max Trenhaile</li>\
                     </ul>\
                 </div>\
+                <div class="col-lg-2 col-md-6">\
+                    <h5 class="text-white mb-3">Disclaimer</h5>\
+                    <p class="small text-muted">The trades that we have are automated with no human oversite. Some information could be slightly off and not provide truthful information. We are not liable for any damage this may cause.</p>\
+                </div>\
                 \
             </div>\
         </div>\

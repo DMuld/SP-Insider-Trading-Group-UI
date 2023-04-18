@@ -1,7 +1,9 @@
 import { backendURL } from '../backendURL.js';
 // const { createHash } = require('crypto');
-
+export { isLoggedIn };
+window.onload=init;
 var user = "guest";
+var isLoggedIn;
 
 // For all of these below. The information aka the response.
 // Is located in the 'text' variable.
@@ -10,6 +12,9 @@ var user = "guest";
 // function hash(string){
 //     return createHash('sha256').update(string).digest('hex');
 // }
+async function init(){
+    isLoggedIn = false;
+}
 
 if (window.location.pathname.split("/").pop() == "login.html") {
     document.getElementById("loginSubmit").addEventListener("click", addUser, false);
@@ -62,6 +67,7 @@ async function authenticateUser(name, hashedPassword){
             console.log("User authenticated");
             // User authentication is always true - FIX
             window.location.href="../index.html";
+            isLoggedIn = true;
         } else {
             alert("User not authenticated");
         }
@@ -79,7 +85,7 @@ async function createUser(name, hashedPassword){
         return response.text();
     }).then( function (text){
         console.log(text);
-        window.location.href="../index.html"
+        window.location.href="../login.html"
     }).catch((err) => {
         console.log("Cannot find /createUser on backend.");
     });
