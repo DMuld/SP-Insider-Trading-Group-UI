@@ -23,10 +23,10 @@ document.write('\
               </div>\
             </li>\
           </ul>\
-          <form class="form-inline my-2 my-lg-0">\
-            <input class="form-control mr-sm-2" type="search" placeholder="Search For Congress" aria-label="Search">\
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>\
-          </form>\
+          <div class="form-inline my-2 my-lg-0">\
+            <input class="form-control mr-sm-2" type="search" id="searchbox" placeholder="Search For Congress" aria-label="Search">\
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="searchSubmit">Search</button>\
+          </div>\
           <ul class = "navbar-nav">\
             <li class="nav-item">\
                 <a class="nav-link" href="/LoginRegister/login.html">Log In</a>\

@@ -24,6 +24,13 @@ async function init(){
     });
 }
 
+document.getElementById("searchSubmit").addEventListener("click", search, false);
+
+async function search() {
+    const value = document.getElementById("searchbox").value;
+    window.location.href = "/Search/search.html?ticker=" + value.toUpperCase()
+}
+
 function formatTrades(input) {
     let index = -1
     let tradesArr = input.split("|");

@@ -22,6 +22,13 @@ if (window.location.pathname.split("/").pop() == "login.html") {
     document.getElementById("registerSubmit").addEventListener("click", registerUser, false);
 }
 
+document.getElementById("searchSubmit").addEventListener("click", search, false);
+
+async function search() {
+    const value = document.getElementById("searchbox").value;
+    window.location.href = "/Search/search.html?ticker=" + value.toUpperCase()
+}
+
 async function addUser(){
     const name = document.getElementById("useremail").value;
     const hashedPassword = document.getElementById("userpassword").value;
@@ -85,7 +92,7 @@ async function createUser(name, hashedPassword){
         return response.text();
     }).then( function (text){
         console.log(text);
-        window.location.href="../login.html"
+        window.location.href="./login.html"
     }).catch((err) => {
         console.log("Cannot find /createUser on backend.");
     });
