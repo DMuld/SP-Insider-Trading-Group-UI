@@ -11,7 +11,7 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <!-- Normal CSS -->
-  <link rel="stylesheet" href="search.css">
+  <link rel="stylesheet" href="favorite.css">
 
   <title>Insider Trading Group</title>
 </head>
@@ -26,13 +26,19 @@
 
   <!-- The other stuff that we need to fill out -->
   <h1 class="display-1 text-light text-center">Insider Trading Group</h1>
-  <h2 id="helloworld" class="text-light text-center">Newest Trades</h1>
+  <h2 id="helloworld" class="text-light text-center">Favorites</h1>
     <!-- These three are hard typed. 
     The function in index.js will over rite them as needed, but this is just for spacing. -->
     <div class="maininfo" >
       <div id="card0" class="card" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">No Search Results Found</h5>
+          <h5 class="card-title">(Ticker) #(filedafter)</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Published: xx/xx/xx</h6>
+          <h6 class="card-subtitle mb-2 text-muted">Traded: xx/xx/xx</h6>
+          <p class="card-text">(purchase) (numofshared) at (price)</p>
+          <a href='https://robinhood.com/us/en/' target='_blank' class='btn btn-primary'>Purchase Stock</a>
+          <br/>
+          <a href='https://www.bloomberg.com/search?query=Nivida'  target='_blank' class='btn btn-secondary'>Research Stock</a>
         </div>
       </div>
       <div id="card1" class="card" style="width: 18rem; display: none;"></div>
@@ -58,7 +64,7 @@
     <script src="/HeaderFooter/footer.js"></script>
 
     <!-- This installs jQuery, Popper.js, adn Bootstrap -->
-    <script type="module" src="search.js"></script>
+    <script type="module" src="favorite.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"></script>
