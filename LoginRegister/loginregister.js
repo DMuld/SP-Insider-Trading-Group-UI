@@ -14,12 +14,24 @@ var isLoggedIn;
 // }
 async function init(){
     isLoggedIn = false;
+
+    //Deletes Cookies, aka logs out.
+    if (document.cookie){
+        document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        alert("Logged Out");
+    } else {
+        document.getElementById("favoritesPage").style.display = "none";
+    }
 }
 
 if (window.location.pathname.split("/").pop() == "login.html") {
     document.getElementById("loginSubmit").addEventListener("click", addUser, false);
 } else {
-    document.getElementById("registerSubmit").addEventListener("click", registerUser, false);
+    if (document.getElementById("registerSubmit")){
+        document.getElementById("registerSubmit").addEventListener("click", registerUser, false);
+    } else {
+        console.log("Register Submit Does Not Exist");
+    }
 }
 
 document.getElementById("searchSubmit").addEventListener("click", search, false);
@@ -75,6 +87,8 @@ async function authenticateUser(name, hashedPassword){
             // User authentication is always true - FIX
             window.location.href="../index.html";
             isLoggedIn = true;
+            document.cookie = 'username='+name+'; path=/';
+            document.getElementById("favoritesPage").style.display = "inherit";
         } else {
             alert("User not authenticated");
         }

@@ -1,20 +1,27 @@
-import { backendURL } from './backendURL.js';
-window.onload=init;
+import { backendURL } from '../backendURL.js';
+window.onload = init;
+
+document.getElementById("searchSubmit").addEventListener("click", search, false);
+
+async function search() {
+    const value = document.getElementById("searchbox").value;
+    window.location.href = "/Search/search.html?ticker=" + value.toUpperCase()
+}
 
 // This is an example API request. 
-async function init(){
-    await fetch(backendURL+'hello?name=Developer').then( function (response) {
+async function init() {
+    await fetch(backendURL + 'hello?name=Developer').then(function (response) {
         return response.text();
-    }).then( function (text){
+    }).then(function (text) {
         console.log(text);
     }).catch((err) => {
         console.log("Unable to get <blank> request.");
     });
 
     // Need to implement a get trades on the backend.
-    await fetch(backendURL+'getTrades').then( function (response) {
+    await fetch(backendURL + 'getTrades').then(function (response) {
         return response.text();
-    }).then( function (text){
+    }).then(function (text) {
         formatTrades(text)
     }).catch((err) => {
         // console.log(err);
@@ -25,15 +32,8 @@ async function init(){
     if (document.cookie != ''){
         document.getElementById("isLoggedIn").innerHTML = "<a class='nav-link' href='/LoginRegister/login.html'>Log Out</a>";
     } else {
-        document.getElementById("favoritesPage").style.display = "none";
+        
     }
-}
-
-document.getElementById("searchSubmit").addEventListener("click", search, false);
-
-async function search() {
-    const value = document.getElementById("searchbox").value;
-    window.location.href = "/Search/search.html?ticker=" + value.toUpperCase()
 }
 
 async function formatTrades(input) {
@@ -64,19 +64,17 @@ async function formatTrades(input) {
             //Checks whether the user is logged in or not.
             if (document.cookie){
                 defaultTemplate = "<div class='card-body'><h5 class='card-title'>"+ticker+" #"+filedAfter+"</h5><h6 class='card-subtitle mb-2 text-muted'>Traded: "+published+"</h6><h6 class='card-subtitle mb-2 text-muted'>Published: "+traded+"</h6><p class='card-text'>"+type+" $"+size+" worth of shares at $"+price+" per share.</p><a href='https://robinhood.com/us/en/' target='_blank' class='btn btn-primary'>Purchase Stock</a><br/><a href='"+researchStockLink+"'  target='_blank' class='btn btn-secondary'>Research Stock</a><br/><button class='btn btn-outline-danger' id='favorite"+index+"' onClick='favClicked(this.id)' for='danger-outlined'>Favorite</button></div>";
-            } else {
-                defaultTemplate = "<div class='card-body'><h5 class='card-title'>"+ticker+" #"+filedAfter+"</h5><h6 class='card-subtitle mb-2 text-muted'>Traded: "+published+"</h6><h6 class='card-subtitle mb-2 text-muted'>Published: "+traded+"</h6><p class='card-text'>"+type+" $"+size+" worth of shares at $"+price+" per share.</p><a href='https://robinhood.com/us/en/' target='_blank' class='btn btn-primary'>Purchase Stock</a><br/><a href='"+researchStockLink+"'  target='_blank' class='btn btn-secondary'>Research Stock</a></div>";
-            }
-
-            if (document.getElementById("card"+index) != null){
-                document.getElementById("card"+index).innerHTML = defaultTemplate
-                document.getElementById("card"+index).style = "width: 18rem;"
-                favIndex = "favorite"+index;
-
-                if (document.cookie){
-                    document.getElementById("favorite"+index).addEventListener("click", () => favClicked(favIndex, ticker), false);
+                if (document.getElementById("card"+index) != null){
+                    document.getElementById("card"+index).innerHTML = defaultTemplate
+                    document.getElementById("card"+index).style = "width: 18rem;";
+                    favIndex = "favorite"+index;
+    
+                    if (document.cookie){
+                        document.getElementById("favorite"+index).addEventListener("click", () => favClicked(favIndex, ticker), false);
+                    }
                 }
             }
+
             if (favorites != "" || favorites != null){
                 let favoritesArr = favorites.split(",");
                 for (let i = 0; i < favoritesArr.length; i++){
@@ -84,6 +82,10 @@ async function formatTrades(input) {
                         document.getElementById(favIndex).innerHTML = 'Unfavorite';
                     }
                 }
+            }
+
+            if (document.getElementById(favIndex).innerHTML == 'Favorite'){
+                document.getElementById("card"+index).style = "width: 18rem; display: none;";
             }
         });
     }).catch((err) => {
