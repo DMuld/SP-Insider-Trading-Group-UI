@@ -75,7 +75,7 @@ async function formatTrades(input) {
                 }
             }
 
-            if (favorites != "" || favorites != null){
+            if (favorites != "" && favorites != null){
                 let favoritesArr = favorites.split(",");
                 for (let i = 0; i < favoritesArr.length; i++){
                     if (favoritesArr[i] == ticker && document.cookie){
