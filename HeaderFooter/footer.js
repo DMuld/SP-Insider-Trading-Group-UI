@@ -13,7 +13,6 @@ document.write('\
                     <h5 class="text-white mb-3">Quick Links</h5>\
                     <ul class="list-unstyled text-muted">\
                         <li><a href="/index.html">Home</a></li>\
-                        <li><a href="#">Top Picks</a></li>\
                         <li><a href="/LoginRegister/login.html">Log In</a></li>\
                         <li><a href="/About/about.html">About Us</a></li>\
                     </ul>\
