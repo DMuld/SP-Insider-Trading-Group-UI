@@ -12,8 +12,8 @@ This was served on AWS Ec2 Instance. (This is no longer deployed)
 
 Images:
 
-![alt text](https://github.com/DMuld/SP-Insider-Trading-Group-UI/blob/main/images/../../../../../../../images/mainPage.png?raw=true)
+![alt text](https://github.com/DMuld/SP-Insider-Trading-Group-UI/blob/main/images/mainPage.png?raw=true)
 
-![alt text](https://github.com/DMuld/SP-Insider-Trading-Group-UI/blob/main/images/../../../../../../../images/favoritesPage.png?raw=true)
+![alt text](https://github.com/DMuld/SP-Insider-Trading-Group-UI/blob/main/images/favoritesPage.png?raw=true)
 
-![alt text](https://github.com/DMuld/SP-Insider-Trading-Group-UI/blob/main/images/../../../../../../../images/loggedIn.png?raw=true)
+![alt text](https://github.com/DMuld/SP-Insider-Trading-Group-UI/blob/main/images/loggedIn.png?raw=true)
